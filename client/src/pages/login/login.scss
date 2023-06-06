@@ -1,0 +1,101 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    background-image: url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bWVldGluZyUyMHN0aWNrJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60");
+    background-size: cover;
+    position: relative;
+    padding: 27rem;
+     max-height: 100%;
+     max-width: 100%;
+     background-position: center;
+     opacity: 90%;
+}
+.sub-container{
+    max-width: 100%;
+    max-height: 100%;
+}
+.user-login{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    margin: 20px auto;
+    text-align: center;
+    transform: translate(-50%, -55%);
+    background: white;
+    box-sizing: border-box;
+    -webkit-box-shadow : 2px 4px 10px 1px rgba(0,0,0,0.47);
+    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 047);
+    opacity: 90%;
+    }
+    .user-login p:first-child{
+        margin: 0 0 30px;
+        padding: 0;
+        color: black;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        letter-spacing: 1.5px;
+    }
+    .user-login .user-InputBox{
+        position: relative;
+        font-weight: bold;
+    }
+    .user-login .user-InputBox input{
+        width: 100%;
+        padding: 15px 0;
+        font-size: 16px;
+        color: black;
+        margin-bottom: 30px;
+        border: none;
+        border-bottom: 1px solid black;
+        outline: none;
+        background: transparent;
+    }
+
+    .user-login .user-InputBox label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0 0px;
+        font-size: 16px;
+        color: black;
+        pointer-events: none;
+        transition: .3s;
+    }
+    .user-login .user-InputBox input:focus ~ label,
+    .user-login .user-InputBox input:valid ~ label{
+        top: -50;
+        left: 0;
+        padding-top: 50px;
+        color: rgb(147, 147, 147);
+        font-size: 12px;
+
+     } 
+     .user-login form a{
+        position: relative;
+        display: inline-block;
+        padding: 5px 20px;
+        font-weight: bold;
+        color: blue;
+        font-size: 16px;
+        text-align: center;
+        text-decoration: none;
+        text-transform: none;
+        overflow: hidden;
+        transition: .1s;
+        margin-top: 5px;
+        letter-spacing: 2px;
+     }
+     .user-login form a:hover{
+        background-color: black;
+        color: rgb(255, 255, 255);
+        border: none;
+        border-radius: 6px;
+        box-shadow: 3px 2px ;
+     }

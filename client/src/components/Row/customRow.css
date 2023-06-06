@@ -1,0 +1,82 @@
+
+
+
+
+.dataRow, .dataRowHidden{
+    display: flex;
+    flex-direction: row;
+    background-color: #f5f5f5;
+    padding: 1rem;
+    align-items: center;
+    align-content: space-evenly;
+    justify-content: space-between;
+}
+
+.title{
+    font-weight: bold;
+}
+
+
+
+
+.customRow, .customRowHead{
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+
+    /* padding: 2rem; */
+}
+
+
+.customRowHead>.dataRow{
+    background-color: #848181;
+    color: white;
+    /* padding: 1rem; */
+}
+
+.customRowHead{
+    background-color: #848181;
+    /* padding: 1rem; */
+}
+
+.indicator{
+    height: 10;
+    background-color: yellowgreen;
+    font-size: 0.3rem;
+    border-radius: 1rem;
+    opacity: 0.4;
+}
+
+#red{
+    height: 10;
+    background-color: red;
+    font-size: 0.3rem;
+    border-radius: 1rem;
+    opacity: 0.4;
+}
+
+#orange{
+    height: 10;
+    background-color: orange;
+    font-size: 0.3rem;
+    border-radius: 1rem;
+    opacity: 0.4;
+}
+
+.dataRowHidden{
+    padding: 1rem;
+}
+
+.arrow-down{
+    transform: rotate(0deg);
+    transition: 1s linear;
+}
+
+.arrow-down.open{
+    transform: rotate(180deg);
+    transition: 1s linear;
+}
+

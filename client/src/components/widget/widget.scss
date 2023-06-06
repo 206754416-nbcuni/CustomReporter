@@ -1,0 +1,84 @@
+.widgets{
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    padding: 10px;
+    -webkit-box-shadow : 2px 4px 10px 1px rgba(0,0,0,0.47);
+    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 047);
+    border-radius: 10px;
+    height: 100px;
+
+    .left, .right{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        // align-items: left;
+        overflow: hidden;
+
+        
+        .title{
+            font-weight: bold;
+            color: #000048;
+            font-size: 16px;
+        }
+        .counter{
+            display: flex;
+            font-size: 24px;
+            font-weight: 200;
+            
+        }
+        .link{
+            display: flex;
+            font-size: 14px; 
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+
+        }
+        .percentage{
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            font-weight: 600;
+            justify-content: left;
+
+        &.positive{
+            color: green;
+        }
+        &.negative{
+            color: red;
+        }
+    }
+    .icon{
+        // font-size: 100px;
+        width: 100px;
+        height: 100px;
+        border-radius: 5px;
+        // align-self: flex-end;
+        // float: right;
+        // position: relative;
+        // display: inline-flex;
+        position: relative;
+        right: -30px;
+        opacity: 0.4;
+        // right: 2%;
+        bottom: -20px;
+        // overflow: clip;
+        // margin: -10px;
+        // object-fit: cover;
+        // margin-top: 4%;
+    }
+    }
+    .right{
+        margin: -10px;
+
+    }
+
+}
+.widgets:hover{
+    background-color: rgb(235, 233, 233);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: cubic-bezier(1, 0, 0, 1);
+}

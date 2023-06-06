@@ -1,0 +1,24 @@
+.Register {
+    text-align: center;
+    // align-items: center;
+    margin: 10vh;
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .LoginForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+    background-color: rgb(245, 245, 245);
+    justify-items: center;
+    border-radius: 50px;
+    padding: 5%;
+  }
+
+ .inputField{
+    margin-bottom: 100px;
+ }

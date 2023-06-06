@@ -1,0 +1,122 @@
+.table-container{
+    margin-top: 20px;
+
+}
+
+h1{
+    /* text-align: center; */
+}
+
+.home{
+    display: flex;
+    /* align-items: center; */
+    /* justify-items: center; */
+}
+
+.homecontainer{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.table-container h1{
+    align-items: center;
+    text-align: left;
+    margin: 20px 0 20px 0;
+    color: rgb(117, 0, 0);
+    
+}
+
+.row{
+    background-color: transparent;
+   position: relative;
+   justify-content: center;
+    border: 3px;
+    border-radius: 5px;
+    display: flex;
+    
+}
+.taskInput{
+    border-radius: 6px;
+   border: none;
+   background-color: rgb(211, 211, 211);
+    margin: 0 20px 20px 0;
+    padding: 10px 340px 10px 15px;
+    text-align: left;
+    font-size: 22px;
+    position: relative;
+}
+.row .btn{
+    border-radius: 6px;
+   border: none;
+    margin: 0 20px 20px 0;
+    padding: 10px 10px 10px 10px;
+    font-size: 20px;
+    position: relative;
+    cursor: pointer;
+}
+.rowAddTask .btn{
+    background-color: red;
+}
+.rowUpdateTask .btn {
+        background-color: rgb(114, 213, 255);
+}
+
+.taskBG{
+    background-color: rgb(225, 225, 225);
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding: 15px 140px 15px 15px;
+    text-align: left;
+    font-size: 22px;
+    position: relative;
+}
+.taskBG div{
+    display: flex;
+    align-items: center;
+}
+.taskNumber{
+    color: gray;
+    border: 1px solid;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    text-align: center;
+    font-size: 14px;
+    margin-right: 12px;
+    align-items: center;
+    justify-content: center;
+
+}
+.taskBG .taskText{
+    flex: 1;
+    padding: 10px 10px 10px 10px;
+}
+.taskBG .done .taskText{
+    text-decoration: line-through;
+    opacity: 0.3;
+    flex: 1;    
+}
+.iconWrap{
+    position: absolute;
+    top: 50%;
+    font-size: 30px;
+    transform: translateY(-50%);
+    right: 1px;
+    width: auto;
+    display: inline-block;
+}
+.taskBG .iconWrap span{
+    display: inline-block;
+    margin: 10px 10px 10px 10px;
+    cursor: pointer;
+    color: rgb(113, 113, 113);
+}
+.taskBG .iconWrap span :hover{
+    color: rgb(176, 176, 176);
+}
+.taskBG .iconWrap label {
+    font-size: 22px;
+
+}

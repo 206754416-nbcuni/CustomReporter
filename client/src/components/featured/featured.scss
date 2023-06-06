@@ -1,0 +1,86 @@
+.featured{
+    flex: 4;
+    -webkit-box-shadow : 2px 4px 10px 1px rgba(0,0,0,0.47);
+    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 047);
+    padding: 10px;
+    .top{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #000048;
+        .title{
+            font-size: 24px;
+            font-weight: 700;
+        }
+    }
+    .bottom{
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        .fetauredChart{
+            width: 200px;
+            height: 200px;
+            .barText{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding-top: 12px;
+                font-size: medium;
+                font-weight: 400;
+                color: rgb(87, 86, 86);
+            }
+        }
+        .totaltest{
+            display: flex;
+            padding: 8px;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            font-weight: 700;
+        }
+        hr{
+            width: 100%;
+           margin-top: 10px;
+            color: rgb(172, 172, 172);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .title{
+            font-size: 16px;
+           text-align: left;
+        }
+
+        .summary{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .item{
+                text-align: center;
+            }
+            .itemtitle{
+                font-size: 17px;
+                font-weight: 300;
+            }
+            .itemresult{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 14px 8px 0 0;
+                font-size: 15px;
+                &.positive{
+                    color: green;
+                }
+                &.negative{
+                    color: red;
+                }
+            }
+
+        } 
+    }
+}
