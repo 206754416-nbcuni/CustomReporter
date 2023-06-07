@@ -3,6 +3,7 @@ import "./login.scss";
 import { userValidator, passwordValidator } from "./RegexValidator";
 import {useNavigate} from "react-router-dom";
 import { useEffect } from "react";
+import {assingProject} from './ProjectAlloc';
 
 export const Login = () => {
   const navigate=useNavigate()
@@ -29,9 +30,12 @@ export const Login = () => {
 
     // setSuccessMessage("Successfully Login")
     if(input.user !=='206720858' || input.password !=='Sab123') 
+    if(input.user !=='206754416' || input.password !=='Pra123') 
     return setErrorMessage('Invalid User ID or Password')
     navigate('/')
     localStorage.setItem('auth',true)
+    localStorage.setItem('id',input.user)
+    localStorage.setItem('project', assingProject(input.user))
    
   };
 
