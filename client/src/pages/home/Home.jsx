@@ -33,8 +33,9 @@ export const Home = () => {
   
       promise.then((d) => {
         console.log(d)
-        setData(d);
-        monthlyData = Array(d.monthlyData)[0]
+
+        setData(d[localStorage.getItem('project')]);
+        monthlyData = Array(d[localStorage.getItem('project')].monthlyData)[0]
         setTableData(monthlyData)
         console.log("Monthly data: ",monthlyData)
       });

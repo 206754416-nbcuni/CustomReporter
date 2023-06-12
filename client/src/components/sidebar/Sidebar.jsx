@@ -22,6 +22,8 @@ const navigate = useNavigate()
   const logoutHandler = (e) =>{
 
       localStorage.removeItem('auth')
+      localStorage.removeItem('id')
+      localStorage.removeItem('project')
 
       navigate('/login')
 
