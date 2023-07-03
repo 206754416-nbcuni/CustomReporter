@@ -10,7 +10,7 @@ const Featured = ({data_}) => {
   return (
     <div className="featured">
       <div className="top">
-      <h4 className="title">Digital Force</h4>
+      <h4 className="title">{localStorage.getItem('project')}</h4>
       <CiMenuKebab fontSize="large" fontWeight={800}/>
       </div>
       <div className="bottom">

@@ -13,15 +13,15 @@ const Production = ()=>{
         async function fetchData(){
           const promise = new Promise(async (resolve, reject) => {
             
-            const response = await fetch('http://127.0.0.1:3002/')
+            const response = await fetch('http://127.0.0.1:3002/getData')
             const d = response.json()
               resolve(d);
             });
       
           promise.then((d) => {
             console.log(d)
-            setData(d);
-            monthlyData = Array(d.monthlyData)[0]
+            setData(d[localStorage.getItem('project')]);
+            monthlyData = Array(d[localStorage.getItem('project')].monthlyData)[0]
             // setTableData(monthlyData)
             console.log("Monthly data: ",monthlyData)
           });
