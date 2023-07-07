@@ -1,6 +1,27 @@
 const XLSX = require('xlsx')
 const http = require('http');
+const express = require('express')
+const cors = require('cors')
+const bodyParser = require('body-parser')
+const mongoose = require('mongoose')
 
+const app = express()
+
+mongoose.connect('mongodb://127.0.0.1:27017/appdb')
+
+const userSchema = mongoose.Schema({
+    Name: String,
+    ID: String,
+    Password:String,
+    Project: String
+})
+
+const user = mongoose.model('user', userSchema)
+
+
+var jsonParser = bodyParser.json()
+
+var urlencodedParser = bodyParser.urlencoded({extended: true})
 
 const workbook = XLSX.readFile("./data/dashboard.xlsx")
 // console.log(workbook.SheetNames)
@@ -17,7 +38,7 @@ while(worksheet[`B${i}`] != undefined){
 
 // console.log(worksheet[`M${rowCount+1}`])
 
-const obj = {Magic: {
+const obj = {DigitalForce: {
     newlyDevelopedScripts: worksheet[`M${rowCount+1}`].w,
     noOfScriptsEnhanced: worksheet[`N${rowCount+1}`].w,
     noOfValidScripts: worksheet[`O${rowCount+1}`].w,
@@ -54,8 +75,8 @@ for(let i = 3;i < rowCount+1; i++){
 
 // console.log(monthlyData)
 
-obj['Magic']['monthlyData'] = monthlyData
-obj['Magic']['noOfMonths'] = rowCount - 2
+obj['DigitalForce']['monthlyData'] = monthlyData
+obj['DigitalForce']['noOfMonths'] = rowCount - 2
 
 console.log(obj)
 
@@ -122,15 +143,57 @@ console.log(obj)
 const hostname = '127.0.0.1';
 const port = 3002;
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  res.setHeader('Content-Type', 'text/plain');
-  res.end(JSON.stringify(obj));
-});
+// const server = http.createServer((req, res) => {
+//   res.statusCode = 200;
+//   res.setHeader("Access-Control-Allow-Origin", "*");
+//   res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//   res.setHeader('Content-Type', 'text/plain');
+//   res.end(JSON.stringify(obj));
+// });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+// server.listen(port, hostname, () => {
+//   console.log(`Server running at http://${hostname}:${port}/`);
+// });
+
+
+app.use(cors())
+app.get('/getData', (req, res)=>{
+    res.end(JSON.stringify(obj))
+})
+
+app.post('/userData', jsonParser, (req, res)=>{
+    console.log(req.body)
+
+    user.insertMany([req.body])
+})
+
+app.get('/getUsers', async (req, res)=>{
+    const data = await user.find().exec()
+    console.log(data)
+    res.end(JSON.stringify(data))
+    
+})
+
+// app.post('/checkUser', jsonParser, async (req, res)=>{
+//     console.log(req.body)
+//     const data = await user.find({ID: req.body.user}).exec()
+//     console.log(data.length)
+//     if (data.length > 0){
+//         app.get('/status', (req, res)=>{
+//             res.end('true')
+//         })
+//     }else{
+//         app.get('/status', (req, res)=>{
+//             res.end('false')
+//         })
+//     }
+    
+//     // res.end("user exists")
+// })
+
+app.listen(port, (req, res)=>{
+    console.log("Server is running!!")
+})
+
+
 

@@ -16,23 +16,6 @@ import HeadLights from "./pages/Headlights/Headlights";
 
 
 function App() {
-  const [data, setData] = useState([])
-
-  useEffect(()=>{
-    async function fetchData(){
-      const promise = new Promise(async (resolve, reject) => {
-        
-        const response = await fetch('http://127.0.0.1:3002/')
-        const data = response.json()
-          resolve(data);
-        });
-  
-      promise.then((d) => {
-        setData(d);
-      });
-  }
-  fetchData()
-}, [])
 
   return (
    <div className="App">

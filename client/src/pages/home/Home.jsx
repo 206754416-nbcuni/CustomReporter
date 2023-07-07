@@ -15,6 +15,7 @@ export const Home = () => {
 
   const [data, setData] = useState([])
   const [tableData, setTableData] = useState([])
+  const [user, setUser] = useState({})
   var monthlyData = []
 
   // var chartData = []
@@ -23,19 +24,22 @@ export const Home = () => {
     if(!localStorage.getItem('auth'))
 
     navigate('/login')
+    console.log("From user:" + localStorage.getItem('user').Project)
     async function fetchData(){
       const promise = new Promise(async (resolve, reject) => {
         
-        const response = await fetch('http://127.0.0.1:3002/')
+        const response = await fetch('http://127.0.0.1:3002/getData')
         const d = response.json()
           resolve(d);
         });
   
       promise.then((d) => {
         console.log(d)
-
-        setData(d[localStorage.getItem('project')]);
-        monthlyData = Array(d[localStorage.getItem('project')].monthlyData)[0]
+        console.log('project: ' + localStorage.getItem('project'))
+        var projectData = d[localStorage.getItem('project')]
+        setData(projectData);
+        console.log('Data: ', data)
+        monthlyData = Array(projectData.monthlyData)[0]
         setTableData(monthlyData)
         console.log("Monthly data: ",monthlyData)
       });

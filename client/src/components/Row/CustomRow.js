@@ -24,7 +24,9 @@ const CustomRow = ({data_, length}) => {
         var indicators = ["green", "red", "orange"]
         var k = 0
         for(let i = 0; i< length; i++){
-            let temp = <div className="customRow">
+            let random1 = Math.floor(Math.random()*1000)
+            let random2 = Math.floor(Math.random()*1000)
+            let temp = <div key={i} className="customRow">
             <div className='dataRow'>
             <div className='title'>{data_[i].month}&emsp;&emsp;&emsp;</div>
             <div>{data_[i].noOfValidScripts}</div>
@@ -32,12 +34,14 @@ const CustomRow = ({data_, length}) => {
             <div>{data_[i].noOfScriptsExecuted}</div>
             <div>{data_[i].noOfDefects}</div>
             {/* <DropDownIcon x={i}/> */}
-            {arr == "up"?<CiCircleChevUp size={30} data-bs-toggle="collapse" data-bs-target={`#hiddenTable${i}`} onClick={()=>toggleArrow()} aria-expanded="false"/>
-            :<CiCircleChevDown size={30} data-bs-toggle="collapse" data-bs-target={`#hiddenTable${i}`} onClick={()=>toggleArrow()} aria-expanded="false"/>
+            {arr == "up"?<CiCircleChevUp size={30} data-bs-toggle="collapse" data-bs-target={`#hiddenTable${i}${random1}${random2}`} onClick={()=>toggleArrow()} aria-expanded="false"/>
+            :<CiCircleChevDown size={30} data-bs-toggle="collapse" data-bs-target={`#hiddenTable${i}${random1}${random2}`} onClick={()=>toggleArrow()} aria-expanded="false"/>
             }
             {/* <button data-bs-toggle="collapse" data-bs-target="#hiddenTable" onClick={()=>arrow='^'}>{arrow}</button> */}
+            
+            
             </div>
-            <div className='dataRowHidden collapse multi-collapse' id={`hiddenTable${i}$`}>
+            <div className='dataRowHidden collapse multi-collapse' id={`hiddenTable${i}${random1}${random2}`}>
             <div className='title'>Cumulative TC's</div>
             <div>{data_[i].cumulativeValidTestcases}</div>
             <div>{data_[i].cumulativeDevelopedScripts}</div>
@@ -45,7 +49,7 @@ const CustomRow = ({data_, length}) => {
             <div>{data_[i].noOfDefects}</div>
             <CiEdit  size={40} />
             </div>
-            <div className={`dataRowHidden collapse multi-collapse`} id={`hiddenTable${i}`}>
+            <div className={`dataRowHidden collapse multi-collapse`} id={`hiddenTable${i}${random1}${random2}`}>
             <div className='title'>Enhanced TC's</div>
             <div>{data_[i].cumulativeValidTestcases}</div>
             <div>{data_[i].cumulativeDevelopedScripts}</div>
