@@ -62,7 +62,7 @@ export const getUser = (users, id) =>{
     // console.log(use)
     if(use.ID === id){
       console.log("User:" + use)
-      // console.log("Match found")
+      console.log("Match found")
       result = use
     }
   })

@@ -55,7 +55,7 @@ export const Login = () => {
     // localStorage.setItem('id',input.user)
     const user = getUser(users, input.user)
     localStorage.setItem('project', user.Project)
-    localStorage.setItem('user', user)
+    localStorage.setItem('user', user.ID)
     // localStorage.setItem('project', assingProject(input.user))
    
   };

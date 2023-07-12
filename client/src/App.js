@@ -13,6 +13,8 @@ import Development from "./pages/Development/Development";
 import Enhancement from "./pages/Enhancement/Enhacement";
 import HighLights from "./pages/Highlights/Highlights";
 import HeadLights from "./pages/Headlights/Headlights";
+import Profile from "./pages/profile/Profile";
+import GetJoke from "./pages/GetJoke/GetJoke";
 
 
 function App() {
@@ -29,9 +31,11 @@ function App() {
           <Route path="Release" element={<Release/>}/>
           <Route path="Enhancement" element={<Enhancement/>}/>
           <Route path="Highlights" element={<HighLights/>}/>
+          <Route path="Profile" element={<Profile/>}/>
           <Route path="Headlights" element={<HeadLights/>}/>
           <Route path="Development" element={<Development/>}/>
           <Route path="register" element={<Register/>}/>
+          <Route path="GetJoke" element={<GetJoke/>}/>
           <Route path="users">
             <Route index element={<List/>}/>
             <Route path="userId" element={<Single/>}/>

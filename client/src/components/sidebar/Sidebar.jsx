@@ -7,7 +7,7 @@ import {CiDeliveryTruck} from "react-icons/ci";
 import {RiProductHuntLine, RiDashboardFill, RiChatNewFill} from "react-icons/ri";
 import {CgProfile} from "react-icons/cg";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Sidebar = () => {
 
@@ -76,6 +76,10 @@ const navigate = useNavigate()
             <MdDiamond className="icon"/>
             <span>Productivity</span>
           </li>
+          <li onClick={()=>navigate('/GetJoke')}>
+            <MdDiamond className="icon"/>
+            <span>GetAJoke</span>
+          </li>
             <p className="title">Automation Effort</p>
           <li>
             <MdFrontLoader className="icon"/>
@@ -90,7 +94,7 @@ const navigate = useNavigate()
             <span>Maintenance</span>
           </li>
             <p className="title">Users</p>
-          <li>
+          <li onClick={()=> navigate('/Profile')}>
             <CgProfile className="icon"/>
             <span>Profile</span>
           </li>
