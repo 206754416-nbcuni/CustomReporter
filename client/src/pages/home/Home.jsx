@@ -24,7 +24,7 @@ export const Home = () => {
     if(!localStorage.getItem('auth'))
 
     navigate('/login')
-    console.log("From user:" + localStorage.getItem('user').Project)
+    // console.log("From user:" + localStorage.getItem('user').Project)
     async function fetchData(){
       const promise = new Promise(async (resolve, reject) => {
         
